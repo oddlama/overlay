@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories encoding="unicode" version="1.1">
+	<repo quality="experimental" status="unofficial">
+		<name>oddlama</name>
+		<description lang="en">oddlama's gentoo overlay</description>
+		<homepage>https://github.com/oddlama/overlay</homepage>
+		<owner type="person">
+			<email>overlay@oddlama.org</email>
+			<name>oddlama</name>
+		</owner>
+		<source type="git">https://github.com/oddlama/overlay.git</source>
+		<feed>https://github.com/oddlama/overlay/commits/master.atom</feed>
+	</repo>
+</repositories>

@@ -1,0 +1,3 @@
+oddlama's gentoo overlay
+========================
+
