@@ -19,6 +19,7 @@ IUSE="mysql postgres sqlite"
 REQUIRED_USE="|| ( mysql postgres sqlite )"
 
 DEPEND="
+	>=app-admin/bitwarden_rs-web-vault-2.14.0
 	acct-group/bitwarden_rs
 	acct-user/bitwarden_rs
 	dev-lang/rust[nightly]
