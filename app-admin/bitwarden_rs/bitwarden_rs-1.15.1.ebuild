@@ -19,8 +19,8 @@ IUSE="mysql postgres sqlite"
 REQUIRED_USE="|| ( mysql postgres sqlite )"
 
 DEPEND="
-	acct-group/ddclient
-	acct-user/ddclient
+	acct-group/bitwarden_rs
+	acct-user/bitwarden_rs
 	dev-lang/rust[nightly]
 	dev-libs/openssl:0="
 RDEPEND="${DEPEND}"
