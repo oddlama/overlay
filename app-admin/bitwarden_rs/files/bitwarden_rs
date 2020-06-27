@@ -4,4 +4,7 @@ set -o allexport
 source "$BITWARDEN_RS_CONFIG"
 set +o allexport
 
+cd /var/lib/bitwarden_rs
+mkdir -p "${DATA_FOLDER:-data}"
+
 exec /usr/bin/bitwarden_rs
