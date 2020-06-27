@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -o allexport
+source "$BITWARDEN_RS_CONFIG"
+set +o allexport
+
+exec /usr/bin/bitwarden_rs
