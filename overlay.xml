@@ -10,6 +10,7 @@
 			<name>oddlama</name>
 		</owner>
 		<source type="git">https://github.com/oddlama/overlay.git</source>
+		<source type="git">git+ssh://git@github.com/oddlama/overlay.git</source>
 		<feed>https://github.com/oddlama/overlay/commits/master.atom</feed>
 	</repo>
 </repositories>
