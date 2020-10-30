@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit vcs-snapshot cmake-utils
+inherit cmake-utils
 
 DESCRIPTION="Neovim client library and GUI, in Qt5"
 HOMEPAGE="https://github.com/equalsraf/neovim-qt"
