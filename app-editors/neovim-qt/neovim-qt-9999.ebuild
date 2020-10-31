@@ -17,7 +17,7 @@ IUSE=""
 RESTRICT="network-sandbox"
 
 DEPEND="
-	msgpack? ( dev-libs/msgpack )
+	dev-libs/msgpack
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5
 	dev-qt/qtnetwork:5
