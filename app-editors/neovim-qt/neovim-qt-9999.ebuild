@@ -25,3 +25,11 @@ DEPEND="
 	dev-qt/qtwidgets:5"
 RDEPEND="${DEPEND}
 	app-editors/neovim"
+
+src_configure() {
+	local mycmakeargs=(
+		-DENABLE_TESTS=OFF
+	)
+
+	cmake-utils_src_configure
+}
