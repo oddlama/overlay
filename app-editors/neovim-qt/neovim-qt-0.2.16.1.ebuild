@@ -28,6 +28,7 @@ RDEPEND="${DEPEND}
 src_configure() {
 	local mycmakeargs=(
 		-DUSE_SYSTEM_MSGPACK=ON
+		-DBUILD_SHARED_LIBS=OFF
 		-DENABLE_TESTS=OFF
 	)
 
