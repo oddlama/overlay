@@ -13,7 +13,8 @@ SRC_URI=""
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS=""
-IUSE="gcov +msgpack"
+IUSE=""
+RESTRICT="network-sandbox"
 
 DEPEND="
 	msgpack? ( dev-libs/msgpack )
@@ -24,12 +25,3 @@ DEPEND="
 	dev-qt/qtwidgets:5"
 RDEPEND="${DEPEND}
 	app-editors/neovim"
-
-src_configure() {
-	local mycmakeargs=(
-		-DUSE_GCOV=$(usex gcov ON OFF)
-		-DUSE_SYSTEM_MSGPACK=$(usex msgpack ON OFF)
-	)
-
-	cmake-utils_src_configure
-}

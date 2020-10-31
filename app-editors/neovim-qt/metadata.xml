@@ -5,8 +5,4 @@
 		<email>overlay@oddlama.org</email>
 		<name>oddlama</name>
 	</maintainer>
-	<use>
-		<flag name="gcov">Build coverage support.</flag>
-		<flag name="msgpack">Use system msgpack libraries.</flag>
-	</use>
 </pkgmetadata>
