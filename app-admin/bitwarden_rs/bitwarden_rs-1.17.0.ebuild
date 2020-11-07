@@ -70,6 +70,11 @@ src_install() {
 	# Install launch wrapper
 	exeinto /var/lib/bitwarden_rs
 	doexe "${FILESDIR}"/bitwarden_rs
+
+	# Keep data dir
+	keepdir /var/lib/bitwarden_rs/data
+	fowners bitwarden_rs:bitwarden_rs /var/lib/bitwarden_rs/data
+	fperms 700 /var/lib/bitwarden_rs/data
 }
 
 src_test() {
