@@ -11,7 +11,7 @@ EnvironmentFile=/etc/bitwarden_rs.env
 ExecStart=/usr/bin/bitwarden_rs
 
 LimitNOFILE=1048576
-LimitNPROC=64
+LimitNPROC=256
 
 PrivateTmp=true
 PrivateDevices=true
