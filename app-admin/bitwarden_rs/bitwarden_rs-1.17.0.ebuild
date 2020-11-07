@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit git-r3 cargo
+inherit git-r3 cargo systemd
 
 DESCRIPTION="Unofficial Bitwarden compatible server written in Rust"
 HOMEPAGE="https://github.com/dani-garcia/bitwarden_rs"
@@ -59,12 +59,13 @@ src_install() {
 	# Install init.d and conf.d scripts
 	newinitd "${FILESDIR}"/init bitwarden_rs
 	newconfd "${FILESDIR}"/conf bitwarden_rs
+	systemd_newunit "${FILESDIR}"/bitwarden_rs.service bitwarden_rs.service
 
-	# Install /etc/bitwarden_rs.conf
+	# Install /etc/bitwarden_rs.env
 	insinto /etc
-	newins .env.template bitwarden_rs.conf
-	fowners root:bitwarden_rs /etc/bitwarden_rs.conf
-	fperms 640 /etc/bitwarden_rs.conf
+	newins .env.template bitwarden_rs.env
+	fowners root:bitwarden_rs /etc/bitwarden_rs.env
+	fperms 640 /etc/bitwarden_rs.env
 
 	# Install launch wrapper
 	exeinto /var/lib/bitwarden_rs
