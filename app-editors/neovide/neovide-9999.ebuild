@@ -27,3 +27,12 @@ src_unpack() {
 	git-r3_src_unpack
 	cargo_live_src_unpack
 }
+
+src_configure() {
+	local myfeatures=()
+	cargo_src_configure --no-default-features
+}
+
+src_install() {
+	cargo_src_install
+}
