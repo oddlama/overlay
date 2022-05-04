@@ -3,7 +3,7 @@
 
 EAPI=7
 
-DESCRIPTION="Unofficial patched bitwarden web-vault builds for bitwarden_rs"
+DESCRIPTION="Web vault builds for vaultwarden"
 HOMEPAGE="https://github.com/dani-garcia/bw_web_builds"
 SRC_URI="https://github.com/dani-garcia/bw_web_builds/releases/download/v${PV}/bw_web_v${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -14,13 +14,9 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
-
-src_unpack() {
-	unpack "${P}.tar.gz" || die
-	S="${WORKDIR}"
-}
+S="${WORKDIR}/web-vault"
 
 src_install() {
-	insinto /usr/share/bitwarden_rs-web-vault/htdocs
+	insinto /usr/share/vaultwarden-web-vault/htdocs
 	doins -r web-vault/*
 }

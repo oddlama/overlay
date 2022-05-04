@@ -1,14 +1,14 @@
 [Unit]
-Description=Unofficial Bitwarden compatible server written in Rust
-Documentation=https://github.com/dani-garcia/bitwarden_rs
+Description=Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs
+Documentation=https://github.com/dani-garcia/vaultwarden
 After=network.target mariadb.service mysqld.service postgresql.service
 
 [Service]
-User=bitwarden_rs
-Group=bitwarden_rs
-Environment="WEB_VAULT_FOLDER=/usr/share/bitwarden_rs-web-vault/htdocs"
-EnvironmentFile=/etc/bitwarden_rs.env
-ExecStart=/usr/bin/bitwarden_rs
+User=vaultwarden
+Group=vaultwarden
+Environment="WEB_VAULT_FOLDER=/usr/share/vaultwarden-web-vault/htdocs"
+EnvironmentFile=/etc/vaultwarden.env
+ExecStart=/usr/bin/vaultwarden
 
 LimitNOFILE=1048576
 LimitNPROC=256
@@ -27,9 +27,9 @@ SystemCallArchitectures=native
 SystemCallFilter=@system-service
 RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
 
-WorkingDirectory=/var/lib/bitwarden_rs
-ReadWriteDirectories=/var/lib/bitwarden_rs
-# Allow bitwarden_rs to bind ports in the range of 0-1024
+WorkingDirectory=/var/lib/vaultwarden
+ReadWriteDirectories=/var/lib/vaultwarden
+# Allow vaultwarden to bind ports in the range of 0-1024
 AmbientCapabilities=CAP_NET_BIND_SERVICE
 CapabilityBoundingSet=CAP_NET_BIND_SERVICE
 

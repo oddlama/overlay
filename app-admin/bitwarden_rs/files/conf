@@ -1,9 +1,0 @@
-# /etc/conf.d/bitwarden_rs: config file for /etc/init.d/bitwarden_rs
-# vim: set filetype=gentoo-conf-d:
-
-# User and group
-BITWARDEN_RS_USER="bitwarden_rs"
-BITWARDEN_RS_GROUP="bitwarden_rs"
-
-# Environment config file (will be sourced)
-BITWARDEN_RS_CONFIG="/etc/bitwarden_rs.env"

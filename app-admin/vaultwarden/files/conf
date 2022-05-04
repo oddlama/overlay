@@ -1,0 +1,9 @@
+# /etc/conf.d/vaultwarden: config file for /etc/init.d/vaultwarden
+# vim: set filetype=gentoo-conf-d:
+
+# User and group
+VAULTWARDEN_USER="vaultwarden"
+VAULTWARDEN_GROUP="vaultwarden"
+
+# Environment config file (will be sourced)
+VAULTWARDEN_CONFIG="/etc/vaultwarden.env"
