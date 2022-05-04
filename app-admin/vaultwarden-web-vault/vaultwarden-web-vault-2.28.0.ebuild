@@ -18,5 +18,5 @@ S="${WORKDIR}/web-vault"
 
 src_install() {
 	insinto /usr/share/vaultwarden-web-vault/htdocs
-	doins -r web-vault/*
+	doins -r *
 }
