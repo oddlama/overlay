@@ -23,7 +23,8 @@ DEPEND="
 	acct-group/vaultwarden
 	acct-user/vaultwarden
 	>=app-admin/vaultwarden-web-vault-2.28.0
-	>=dev-lang/rust-1.60
+	>=dev-lang/rust-1.60[nightly]
+	sqlite? ( dev-db/sqlite )
 	dev-libs/openssl:0="
 RDEPEND="${DEPEND}"
 
