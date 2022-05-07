@@ -4,7 +4,7 @@
 
 command="/var/lib/vaultwarden/vaultwarden"
 pidfile="/run/vaultwarden.pid"
-description="Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs"
+description="Vaultwarden - Unofficial Bitwarden compatible server written in Rust"
 start_stop_daemon_args="--env VAULTWARDEN_CONFIG=$VAULTWARDEN_CONFIG --user ${VAULTWARDEN_USER} --group ${VAULTWARDEN_GROUP} --pidfile ${pidfile} --make-pidfile --background"
 
 depend() {

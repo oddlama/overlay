@@ -6,7 +6,7 @@ EAPI=8
 CRATES=" "
 inherit git-r3 cargo systemd
 
-DESCRIPTION="Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs"
+DESCRIPTION="Vaultwarden - Unofficial Bitwarden compatible server written in Rust"
 HOMEPAGE="https://github.com/dani-garcia/vaultwarden"
 EGIT_REPO_URI="https://github.com/dani-garcia/vaultwarden.git"
 EGIT_COMMIT="${PV}"

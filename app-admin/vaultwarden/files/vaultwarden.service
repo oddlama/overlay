@@ -1,5 +1,5 @@
 [Unit]
-Description=Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs
+Description=Vaultwarden - Unofficial Bitwarden compatible server written in Rust
 Documentation=https://github.com/dani-garcia/vaultwarden
 After=network.target mariadb.service mysqld.service postgresql.service
 
