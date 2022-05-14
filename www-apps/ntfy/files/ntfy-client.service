@@ -1,0 +1,33 @@
+[Unit]
+Description=ntfy client
+Documentation=https://github.com/binwiederhier/ntfy
+After=network.target
+
+[Service]
+User=ntfy
+Group=ntfy
+ExecStart=/usr/bin/ntfy subscribe --config /etc/ntfy/client.yml --from-config
+Restart=on-failure
+
+PrivateTmp=true
+PrivateDevices=true
+ProtectHome=true
+ProtectSystem=strict
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+
+RestrictNamespaces=yes
+
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+WorkingDirectory=/var/lib/ntfy
+ReadWriteDirectories=/var/lib/ntfy
+ReadWriteDirectories=/var/cache/ntfy
+AmbientCapabilities=
+CapabilityBoundingSet=
+
+[Install]
+WantedBy=multi-user.target

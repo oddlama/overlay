@@ -5,5 +5,5 @@ EAPI=8
 
 inherit acct-group
 
-DESCRIPTION="Group for vaultwarden"
-ACCT_GROUP_ID=368
+DESCRIPTION="Group for ntfy"
+ACCT_GROUP_ID=518
