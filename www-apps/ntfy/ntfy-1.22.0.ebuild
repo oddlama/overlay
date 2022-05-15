@@ -45,6 +45,8 @@ src_compile() {
 src_install() {
 	dobin bin/ntfy
 	keepdir /var/cache/ntfy
+	fowners ntfy:ntfy /var/cache/ntfy
+	fperms 700 /var/cache/ntfy
 
 	# Install service files
 	systemd_dounit "${FILESDIR}"/ntfy.service
