@@ -44,6 +44,15 @@ src_compile() {
 
 src_install() {
 	dobin bin/ntfy
+
+	insinto /etc/ntfy
+	fowners root:ntfy /etc/ntfy
+	fperms 750 /etc/ntfy
+
+	insopts -o root -g ntfy -m 640
+	doins server/server.yml
+	doins client/client.yml
+
 	keepdir /var/cache/ntfy
 	fowners ntfy:ntfy /var/cache/ntfy
 	fperms 700 /var/cache/ntfy
