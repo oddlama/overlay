@@ -367,9 +367,9 @@ LICENSE="
 SLOT="0"
 KEYWORDS="~amd64"
 
-BDEPEND="
-	app-text/mandown
-"
+#BDEPEND="
+#	app-text/mandown
+#"
 #	dev-util/binaryen
 #	dev-util/cargo-make
 #"
@@ -388,8 +388,8 @@ src_compile() {
 #	cargo make build-release || die
 #	cargo make manpage || die
 #	cargo make wasm-opt-plugins || die
-	mkdir -p assets/man || die
-	mandown docs/MANPAGE.md ZELLIJ 1 > assets/man/zellij.1 || die
+	#mkdir -p assets/man || die
+	#mandown docs/MANPAGE.md ZELLIJ 1 > assets/man/zellij.1 || die
 	mkdir -p assets/completions || die
 	./target/release/zellij setup --generate-completion bash > assets/completions/zellij.bash || die
 	./target/release/zellij setup --generate-completion fish > assets/completions/zellij.fish || die
@@ -407,7 +407,7 @@ src_install() {
 	insinto /usr/share/zellij/plugins/
 	doins -r assets/plugins/*
 
-	doman assets/man/zellij.1
+	#doman assets/man/zellij.1
 
 	insinto /usr/share/xsessions/
 	doins assets/zellij.desktop
