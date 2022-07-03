@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
+inherit systemd
 
 DESCRIPTION="Policy-driven snapshot management and replication tools."
 HOMEPAGE="https://github.com/jimsalterjrs/sanoid"
@@ -27,6 +28,10 @@ src_install() {
 	dobin sanoid syncoid findoid sleepymutex
 	insinto /etc/sanoid
 	doins sanoid.defaults.conf
+
+	systemd_newunit packages/debian/sanoid-prune.service sanoid-prune.service
+	systemd_newunit packages/debian/sanoid.service sanoid.service
+	systemd_newunit packages/debian/sanoid.timer sanoid.timer
 }
 
 pkg_postinst() {
