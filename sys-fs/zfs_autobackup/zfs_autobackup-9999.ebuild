@@ -10,7 +10,9 @@ inherit distutils-r1
 
 DESCRIPTION="Easy and reliable ZFS autobackup tool for snapshotting, thinning and remote replication"
 HOMEPAGE="https://github.com/psy0rz/zfs_autobackup"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+#SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+inherit git-r3
+EGIT_REPO_URI="https://github.com/oddlama/zfs_autobackup.git"
 
 LICENSE="GPL-3"
 SLOT="0"
