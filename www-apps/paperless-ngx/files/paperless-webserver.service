@@ -7,10 +7,7 @@ PartOf=paperless.target
 [Service]
 User=paperless
 Group=paperless
-Environment="PAPERLESS_CONSUMPTION_DIR=/var/lib/paperless/consume"
-Environment="PAPERLESS_DATA_DIR=/var/lib/paperless/data"
-Environment="PAPERLESS_MEDIA_ROOT=/var/lib/paperless/media"
-EnvironmentFile=/etc/paperless/paperless.conf
+EnvironmentFile=/etc/paperless.conf
 ExecStart=/usr/bin/gunicorn -c /usr/share/paperless/gunicorn.conf.py paperless.asgi:application
 Restart=on-abort
 

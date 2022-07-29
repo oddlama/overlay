@@ -40,10 +40,10 @@ src_install() {
 	insinto /usr/share/paperless
 	doins -r docs src static gunicorn.conf.py requirements.txt
 
-	insinto /etc/paperless
+	insinto /etc
 	doins paperless.conf
-	fowners root:paperless /etc/paperless/paperless.conf
-	fperms 640 /etc/paperless/paperless.conf
+	fowners root:paperless /etc/paperless.conf
+	fperms 640 /etc/paperless.conf
 
 	# Keep data dir
 	keepdir /var/lib/paperless/data
