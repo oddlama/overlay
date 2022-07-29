@@ -34,6 +34,7 @@ src_install() {
 	systemd_newunit "${FILESDIR}"/paperless-webserver.service paperless-webserver.service
 	systemd_newunit "${FILESDIR}"/paperless-scheduler.service paperless-scheduler.service
 	systemd_newunit "${FILESDIR}"/paperless-consumer.service paperless-consumer.service
+	systemd_newunit "${FILESDIR}"/paperless.target paperless.target
 
 	# Install paperless files
 	insinto /usr/share/paperless
