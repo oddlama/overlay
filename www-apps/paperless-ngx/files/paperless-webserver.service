@@ -1,0 +1,38 @@
+[Unit]
+Description=Paperless webserver service
+After=network.target
+Requires=redis.service
+PartOf=paperless.target
+
+[Service]
+User=paperless
+Group=paperless
+Environment="PAPERLESS_CONSUMPTION_DIR=/var/lib/paperless/consume"
+Environment="PAPERLESS_DATA_DIR=/var/lib/paperless/data"
+Environment="PAPERLESS_MEDIA_ROOT=/var/lib/paperless/media"
+EnvironmentFile=/etc/paperless/paperless.conf
+ExecStart=/usr/bin/gunicorn -c /usr/share/paperless/gunicorn.conf.py paperless.asgi:application
+Restart=on-abort
+
+PrivateTmp=true
+PrivateDevices=true
+ProtectHome=true
+ProtectSystem=strict
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+
+RestrictNamespaces=yes
+
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+WorkingDirectory=/usr/share/paperless/src
+ReadWriteDirectories=/var/lib/paperless
+# Allow to bind ports in the range of 0-1024
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=paperless.target
