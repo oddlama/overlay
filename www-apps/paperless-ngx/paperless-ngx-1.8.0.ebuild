@@ -49,9 +49,4 @@ src_install() {
 	keepdir /var/lib/paperless/data
 	fowners paperless:paperless /var/lib/paperless/data
 	fperms 700 /var/lib/paperless/data
-
-	# Keep data/logs dir
-	keepdir /var/lib/paperless/data/logs
-	fowners paperless:paperless /var/lib/paperless/data/logs
-	fperms 700 /var/lib/paperless/data/logs
 }
