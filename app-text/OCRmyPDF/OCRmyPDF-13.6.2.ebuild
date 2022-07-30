@@ -21,6 +21,7 @@ RDEPEND="
 	app-text/tesseract
 	app-text/unpaper
 	dev-python/cffi[${PYTHON_USEDEP}]
+	>=dev-python/pip-22.1.2[${PYTHON_USEDEP}]
 	>=dev-python/coloredlogs-15.0.1[${PYTHON_USEDEP}]
 	>=dev-python/packaging-20[${PYTHON_USEDEP}]
 	>dev-python/pdfminer-six-20200720[${PYTHON_USEDEP}]
