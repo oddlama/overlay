@@ -10,7 +10,6 @@ Group=paperless
 ExecStart=/var/lib/paperless/venv/bin/python manage.py qcluster
 Restart=on-abort
 
-PrivateTmp=true
 PrivateDevices=true
 ProtectHome=true
 ProtectSystem=strict
@@ -24,7 +23,7 @@ SystemCallArchitectures=native
 SystemCallFilter=@system-service
 
 WorkingDirectory=/usr/share/paperless/src
-ReadWriteDirectories=/var/lib/paperless
+ReadWriteDirectories=/var/lib/paperless /tmp /var/tmp
 
 [Install]
 WantedBy=paperless.target

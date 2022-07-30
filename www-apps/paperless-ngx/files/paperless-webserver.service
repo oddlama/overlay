@@ -11,7 +11,6 @@ EnvironmentFile=/etc/paperless.conf
 ExecStart=/var/lib/paperless/venv/bin/gunicorn -c /usr/share/paperless/gunicorn.conf.py paperless.asgi:application
 Restart=on-abort
 
-PrivateTmp=true
 PrivateDevices=true
 ProtectHome=true
 ProtectSystem=strict
@@ -26,7 +25,7 @@ SystemCallFilter=@system-service
 RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
 
 WorkingDirectory=/usr/share/paperless/src
-ReadWriteDirectories=/var/lib/paperless
+ReadWriteDirectories=/var/lib/paperless /tmp /var/tmp
 # Allow to bind ports in the range of 0-1024
 AmbientCapabilities=CAP_NET_BIND_SERVICE
 CapabilityBoundingSet=CAP_NET_BIND_SERVICE
