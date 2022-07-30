@@ -18,11 +18,11 @@ DEPEND="
 	acct-group/paperless
 	acct-user/paperless
 	www-servers/gunicorn
-    app-crypt/gnupg
-    media-gfx/imagemagick
-    media-gfx/optipng
-    app-text/poppler[utils]
-    media-libs/jbig2enc
+	app-crypt/gnupg
+	media-gfx/imagemagick
+	media-gfx/optipng
+	app-text/poppler[utils]
+	media-libs/jbig2enc
 	ocr? ( app-text/OCRmyPDF )
 "
 RDEPEND="${DEPEND}"
@@ -49,4 +49,24 @@ src_install() {
 	keepdir /var/lib/paperless/data
 	fowners paperless:paperless /var/lib/paperless/data
 	fperms 700 /var/lib/paperless/data
+}
+
+pkg_postinst() {
+	einfo "Before you can use paperless, you have to setup the python dependencies and"
+	einfo "initialize the database. Execute the following commands as the paperless user."
+	einfo "If you are updating from a previous version, you should update the dependencies"
+	einfo "and re-run the migrate command."
+	einfo ""
+	einfo "  # Create virtual environment"
+	einfo "  python -m venv /var/lib/paperless/venv"
+	einfo ""
+	einfo "  # Install dependencies"
+	einfo "  /var/lib/paperless/venv/bin/pip install -r /usr/share/paperless/requirements.txt"
+	einfo ""
+	einfo "  # Initialize database"
+	einfo "  cd /usr/share/paperless/src"
+	einfo "  /var/lib/paperless/venv/bin/python manage.py migrate"
+	einfo ""
+	einfo "  # Create superuser"
+	einfo "  /var/lib/paperless/venv/bin/python manage.py createsuperuser"
 }

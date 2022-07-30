@@ -7,7 +7,7 @@ PartOf=paperless.target
 [Service]
 User=paperless
 Group=paperless
-ExecStart=/usr/bin/paperless-manage qcluster
+ExecStart=/var/lib/paperless/venv/bin/python manage.py qcluster
 Restart=on-abort
 
 PrivateTmp=true

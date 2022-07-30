@@ -7,7 +7,7 @@ PartOf=paperless.target
 [Service]
 User=paperless
 Group=paperless
-ExecStart=/usr/bin/paperless-manage document_consumer
+ExecStart=/var/lib/paperless/venv/bin/python manage.py document_consumer
 Restart=on-abort
 
 PrivateTmp=true
